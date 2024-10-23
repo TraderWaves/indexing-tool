@@ -9,26 +9,26 @@ const Earn2Trade = ({ width = 121, height = 121 }) => (
     <path d="M50.9773 66.6103V70.3366H69.4495C75.4848 70.3366 80.4054 75.1457 80.5965 81.1651V81.5473H49.1301C42.9674 81.5473 39.8781 78.4421 39.8781 72.2157V64.7472C39.8781 58.5208 42.9674 55.4156 49.1301 55.4156H69.4972V51.6734H40.515C40.515 51.6734 40.4832 51.546 40.4832 51.3071C40.4832 43.8068 46.8529 40.4786 51.7098 40.4786H71.3444C77.5231 40.4786 80.6124 43.5838 80.6124 49.8102V57.2787C80.6124 63.5051 77.5231 66.6103 71.3444 66.6103H50.9773Z" fill="url(#paint4_linear_34_439)" />
     <defs>
       <linearGradient id="paint0_linear_34_439" x1="12.1352" y1="68.1726" x2="29.9437" y2="18.0596" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#FF5140" />
-        <stop offset="0.47" stop-color="#FF457C" />
-        <stop offset="1" stop-color="#C700F9" />
+        <stop stopColor="#FF5140" />
+        <stop offset="0.47" stopColor="#FF457C" />
+        <stop offset="1" stopColor="#C700F9" />
       </linearGradient>
       <linearGradient id="paint1_linear_34_439" x1="119.372" y1="60.9868" x2="1.62793" y2="60.9868" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#FF37C0" />
-        <stop offset="1" stop-color="#FF4483" />
+        <stop stopColor="#FF37C0" />
+        <stop offset="1" stopColor="#FF4483" />
       </linearGradient>
       <linearGradient id="paint2_linear_34_439" x1="1.62793" y1="60.9572" x2="119.372" y2="60.9572" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#FF5140" />
-        <stop offset="1" stop-color="#FF37C0" />
+        <stop stopColor="#FF5140" />
+        <stop offset="1" stopColor="#FF37C0" />
       </linearGradient>
       <linearGradient id="paint3_linear_34_439" x1="1.62793" y1="60.9572" x2="119.372" y2="60.9572" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#FF5140" />
-        <stop offset="1" stop-color="#FF37C0" />
+        <stop stopColor="#FF5140" />
+        <stop offset="1" stopColor="#FF37C0" />
       </linearGradient>
       <linearGradient id="paint4_linear_34_439" x1="45.6587" y1="82.1683" x2="78.5423" y2="42.9787" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#FF36C1" />
-        <stop offset="0.47" stop-color="#FF457C" />
-        <stop offset="1" stop-color="#FFA400" />
+        <stop stopColor="#FF36C1" />
+        <stop offset="0.47" stopColor="#FF457C" />
+        <stop offset="1" stopColor="#FFA400" />
       </linearGradient>
     </defs>
   </svg>

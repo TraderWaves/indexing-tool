@@ -1,0 +1,29 @@
+.logo-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-scroll {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: scroll 5s linear infinite;
+}
+
+.logo-item {
+  height: 50px; /* Adjust based on logo size */
+  margin: 0 20px; /* Spacing between logos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
