@@ -3,9 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+
+import { Button } from './ui/button';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +26,43 @@ export const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    const offset = 80;
+
+    if (targetElement) {
+      const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+
+    setIsMenuOpen(false);
+  };
+
+  const navLinks = [
+    {
+      label: 'Props Table',
+      href: 'props-table',
+    },
+    {
+      label: 'Compare',
+      href: 'compare',
+    },
+    {
+      label: 'Features',
+      href: 'features',
+    },
+    // {
+    //   label: 'Contact',
+    //   href: 'contact',
+    // },
+  ];
 
   return (
     <nav
@@ -44,19 +85,51 @@ export const Navbar = () => {
               </span>
             </Link>
           </div>
+          {/* Desktop Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link
-                href="/pricing"
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-              >
-                Pricing
-              </Link>
-              {/* Add more navigation links here */}
+              {navLinks.map(link => (
+                <a
+                  key={link.href}
+                  href={`#${link.href}`}
+                  onClick={e => handleSmoothScroll(e, link.href)}
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
+          </div>
+
+          {/* Mobile Hamburger Menu */}
+          <div className="block md:hidden">
+            <Button
+              className="text-gray-300 focus:outline-none"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </Button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Links */}
+      {isMenuOpen && (
+        <div className="bg-gray-900/90 backdrop-blur-md md:hidden">
+          <div className="flex flex-col items-center space-y-4 py-4">
+            {navLinks.map(link => (
+              <a
+                key={link.href}
+                href={`#${link.href}`}
+                onClick={e => handleSmoothScroll(e, link.href)}
+                className="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
